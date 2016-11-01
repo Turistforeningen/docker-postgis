@@ -1,3 +1,3 @@
-# docker-postgis-no
+# docker-postgis
 
-Adds the `nb_NO.UTF-8` locale to [docker-postgis](https://github.com/appropriate/docker-postgis).
+Deployment of [docker-postgis](https://github.com/appropriate/docker-postgis).
