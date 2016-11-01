@@ -1,5 +1,5 @@
 postgres:
-  image: turistforeningen/postgis-no
+  image: turistforeningen/postgis
   ports:
   - "5432:5432"
   tags:
