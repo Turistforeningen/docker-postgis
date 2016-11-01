@@ -4,3 +4,13 @@ postgres:
   - "5432:5432"
   tags:
     - db
+
+newrelic-plugin-agent:
+  image: turistforeningen/postgis-newrelic
+  volumes_from:
+  - secrets
+
+secrets:
+  image: turistforeningen/postgis-newrelic-secrets:v1
+  volumes:
+  - /etc/newrelic
