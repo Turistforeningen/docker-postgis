@@ -12,3 +12,8 @@ RUN pip install awscli
 RUN mkdir -p /backup
 WORKDIR /backup
 COPY . /backup
+
+# Install crontab
+RUN cat /backup/crontab | crontab
+
+CMD ["cron", "-f"]
