@@ -23,10 +23,14 @@ secrets-postgis:
 
 newrelic-plugin-agent:
   image: turistforeningen/postgis-newrelic
+  tags:
+    - db
   volumes_from:
   - secrets-newrelic
 
 secrets-newrelic:
   image: turistforeningen/postgis-newrelic-secrets:v1
+  tags:
+    - db
   volumes:
   - /etc/newrelic
