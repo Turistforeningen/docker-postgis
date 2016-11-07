@@ -1,16 +1,32 @@
 postgres:
   image: turistforeningen/postgis
-  ports:
-  - "5432:5432"
   tags:
     - db
+  ports:
+  - "5432:5432"
+
+backup:
+  image: turistforeningen/postgis-backup
+  tags:
+    - db
+  environment:
+    DATABASES: "sherpa"
+  volumes_from:
+  - secrets-postgis
+
+secrets-postgis:
+  image: turistforeningen/postgis-secrets:v2
+  tags:
+    - db
+  volumes:
+  - /secrets
 
 newrelic-plugin-agent:
   image: turistforeningen/postgis-newrelic
   volumes_from:
-  - secrets
+  - secrets-newrelic
 
-secrets:
+secrets-newrelic:
   image: turistforeningen/postgis-newrelic-secrets:v1
   volumes:
   - /etc/newrelic
