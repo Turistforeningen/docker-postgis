@@ -1,1 +1,3 @@
-0 3 * * * /backup/backup.sh
+PATH=/usr/local/bin:/usr/bin:/bin
+
+0 3 * * * /backup/backup.sh >> /backup/cron.log
