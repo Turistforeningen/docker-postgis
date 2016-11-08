@@ -3,7 +3,8 @@
 source /secrets/aws.env
 source /secrets/postgis.env
 
-for DATABASE in ${DATABASES//,/ }
+# Specify databases to back up here
+for DATABASE in "sherpa"
 do
     FILENAME=${DATABASE}-$(date "+%Y%m%d").xz
     pg_dump -h postgres -Fc ${DATABASE} | xz --compress > ${FILENAME}

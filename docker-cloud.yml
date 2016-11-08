@@ -9,8 +9,6 @@ backup:
   image: turistforeningen/postgis-backup
   tags:
     - db
-  environment:
-    DATABASES: "sherpa"
   volumes_from:
   - secrets-postgis
 
