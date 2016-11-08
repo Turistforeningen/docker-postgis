@@ -3,32 +3,32 @@ postgres:
   tags:
     - db
   ports:
-  - "5432:5432"
+    - "5432:5432"
 
 backup:
   image: turistforeningen/postgis-backup
   tags:
     - db
   volumes_from:
-  - secrets-postgis
+    - secrets-postgis
 
 secrets-postgis:
   image: turistforeningen/postgis-secrets:v2
   tags:
     - db
   volumes:
-  - /secrets
+    - /secrets
 
 newrelic-plugin-agent:
   image: turistforeningen/postgis-newrelic
   tags:
     - db
   volumes_from:
-  - secrets-newrelic
+    - secrets-newrelic
 
 secrets-newrelic:
   image: turistforeningen/postgis-newrelic-secrets:v1
   tags:
     - db
   volumes:
-  - /etc/newrelic
+    - /etc/newrelic
