@@ -1,0 +1,13 @@
+version: '2'
+services:
+  postgis:
+    build: postgis
+    image: turistforeningen/postgis:9.6
+
+  postgis-backup:
+    build: postgis-backup
+    image: turistforeningen/postgis-backup
+
+  postgis-newrelic:
+    build: newrelic-plugin-agent
+    image: turistforeningen/postgis-newrelic
