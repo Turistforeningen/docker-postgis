@@ -2,8 +2,8 @@ postgres:
   image: turistforeningen/postgis
   tags:
     - db
-  ports:
-    - "5432:5432"
+  expose:
+    - "5432"
 
 backup:
   image: turistforeningen/postgis-backup
