@@ -1,5 +1,5 @@
 postgres:
-  image: turistforeningen/postgis
+  image: turistforeningen/postgis:9.6
   tags:
     - db
   expose:
