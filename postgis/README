@@ -1,0 +1,9 @@
+Note that postgresql.conf is *not* included by default in the image. It
+represents the current deployment configuration, but will have to be manually
+installed in any new deployments.
+
+To edit the configuration, make your changes manually in the current
+deployment, and commit the changes here.
+
+To view modified settings, compare this to the current sample configuration:
+https://github.com/postgres/postgres/blob/master/src/backend/utils/misc/postgresql.conf.sample
