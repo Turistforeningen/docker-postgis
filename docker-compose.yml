@@ -3,6 +3,8 @@ services:
   postgis:
     build: postgis
     image: turistforeningen/postgis:9.6
+    expose:
+      - '5432'
 
   postgis-backup:
     build: postgis-backup
