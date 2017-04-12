@@ -32,3 +32,14 @@ secrets-newrelic:
     - db
   volumes:
     - /etc/newrelic
+
+pganalyze-collector:
+  image: 'quay.io/pganalyze/collector:stable'
+  tags:
+    - db
+  volumes_from:
+    - postgres
+  environment:
+    - DB_URL=
+    - PGA_API_KEY=
+    - PGA_ALWAYS_COLLECT_SYSTEM_DATA=1
